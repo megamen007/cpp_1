@@ -6,7 +6,7 @@
 #    By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/15 23:44:05 by mboudrio          #+#    #+#              #
-#    Updated: 2023/12/16 00:56:37 by mboudrio         ###   ########.fr        #
+#    Updated: 2023/12/16 19:36:17 by mboudrio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRC = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
 OBJ = $(SRC:.cpp=.o)
 
 # Define the name of the executable to be generated
-NAME = cpp_0
+NAME = cpp_1_ex00
 
 # Define the default target to be built
 all: $(NAME)
