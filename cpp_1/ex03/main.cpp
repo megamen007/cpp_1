@@ -6,7 +6,15 @@
 /*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 01:15:02 by mboudrio          #+#    #+#             */
-/*   Updated: 2023/12/16 01:15:03 by mboudrio         ###   ########.fr       */
+/*   Updated: 2023/12/17 17:38:03 by mboudrio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
+
+int main ()
+{
+    
+}

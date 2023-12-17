@@ -6,15 +6,15 @@
 /*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 00:55:30 by mboudrio          #+#    #+#             */
-/*   Updated: 2023/12/16 21:00:39 by mboudrio         ###   ########.fr       */
+/*   Updated: 2023/12/17 16:49:48 by mboudrio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string zombie_name)
+Zombie::Zombie()
 {
-    name = zombie_name;
+    
 }
 void Zombie::announce()
 {
@@ -23,18 +23,11 @@ void Zombie::announce()
 
 Zombie::~Zombie()
 {
-    std::cout << name << "destroyed!";
+    
 }
 
-void randomChump(std::string name)
+void Zombie::set_name(std::string zname)
 {
-    Zombie Zombie(name);
-    Zombie.announce();
-}
-
-Zombie* newZombie(std::string name)
-{
-    Zombie* zombie = new Zombie(name);
-    return zombie;
+    name = zname;
 }
 

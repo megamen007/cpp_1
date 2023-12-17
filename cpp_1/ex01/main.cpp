@@ -6,7 +6,7 @@
 /*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 00:55:28 by mboudrio          #+#    #+#             */
-/*   Updated: 2023/12/16 20:48:54 by mboudrio         ###   ########.fr       */
+/*   Updated: 2023/12/17 16:57:32 by mboudrio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@ int main()
 {
     std::string zname;
     
-    std::cout << "zombie will be created on the stack\n" << std::endl;
-    std::cout << "Enter ur Zombie Name" << std:: endl;
-    std::cin >> zname;
+    int Hordesize;
+    Hordesize = 999;
+    zname = "lmellali";
+    
+    Zombie *zombiearray = zombieHorde(Hordesize, zname);
+    int i;
+    i = 0;
+    while(i < Hordesize)
+    {
+        zombiearray[i].announce();
+        i++;
+    }
+    delete[] zombiearray;
 
-    Zombie first_zombie(zname);
-    
-    std::cout << "zombie will be created on the heap\n" << std::endl;
-    std::cout << "Enter ur Zombie Name" << std:: endl;
-    std::cin >> zname;
-    Zombie *second_zombie = newZombie(zname);
-    second_zombie->announce();
-    delete second_zombie;
-    
-    std::cout << "randomChump randomChump \n" << std::endl;
-    randomChump("zomboso");
+    return 0;
 }

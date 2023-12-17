@@ -6,7 +6,7 @@
 #    By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/16 00:55:25 by mboudrio          #+#    #+#              #
-#    Updated: 2023/12/16 16:20:43 by mboudrio         ###   ########.fr        #
+#    Updated: 2023/12/17 16:00:05 by mboudrio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=
 
 # Define the source files for the executable
-SRC = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+SRC = main.cpp zombieHorde.cpp Zombie.cpp
 # Define the object files for the executable, generated from the source files
 OBJ = $(SRC:.cpp=.o)
 

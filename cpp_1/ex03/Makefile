@@ -6,7 +6,7 @@
 #    By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/16 01:15:05 by mboudrio          #+#    #+#              #
-#    Updated: 2023/12/16 16:20:23 by mboudrio         ###   ########.fr        #
+#    Updated: 2023/12/17 17:35:46 by mboudrio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=
 
 # Define the source files for the executable
-SRC = 
+SRC = HumanA.cpp HumanB.cpp main.cpp 
 # Define the object files for the executable, generated from the source files
 OBJ = $(SRC:.cpp=.o)
 

@@ -6,12 +6,16 @@
 /*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 23:44:16 by mboudrio          #+#    #+#             */
-/*   Updated: 2023/12/16 00:18:49 by mboudrio         ###   ########.fr       */
+/*   Updated: 2023/12/17 16:52:19 by mboudrio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
+Zombie::Zombie()
+{
+    name = "";
+}
 Zombie::Zombie(std::string zombie_name)
 {
     name = zombie_name;

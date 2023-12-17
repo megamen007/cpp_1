@@ -6,7 +6,7 @@
 /*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 23:44:02 by mboudrio          #+#    #+#             */
-/*   Updated: 2023/12/16 20:45:12 by mboudrio         ###   ########.fr       */
+/*   Updated: 2023/12/17 16:51:04 by mboudrio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main()
     std::cout << "Enter ur Zombie Name" << std:: endl;
     std::cin >> zname;
 
-    Zombie first_zombie(zname);
+    Zombie first_zombie();
     
     std::cout << "zombie will be created on the heap\n" << std::endl;
     std::cout << "Enter ur Zombie Name" << std:: endl;
