@@ -6,12 +6,12 @@
 /*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 01:09:27 by mboudrio          #+#    #+#             */
-/*   Updated: 2023/12/17 17:12:56 by mboudrio         ###   ########.fr       */
+/*   Updated: 2023/12/18 21:45:29 by mboudrio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iostream"
-#include "string"
+#include <iostream>
+#include <string>
 
 int main ()
 {
