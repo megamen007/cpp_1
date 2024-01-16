@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/18 22:03:31 by mboudrio          #+#    #+#             */
-/*   Updated: 2023/12/19 00:39:42 by mboudrio         ###   ########.fr       */
+/*   Created: 2024/01/16 05:22:00 by mboudrio          #+#    #+#             */
+/*   Updated: 2024/01/16 05:25:35 by mboudrio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,6 @@
 
 #include <iostream>
 #include <fstream>
+#include <string>
 
-class Filereplacer
-{
-    private:
-        std::string filename;
-        std::string s1;
-        std::string s2;
-        std::ofstream outputfile;
-        std::ifstream inputfile;
-    public:
-        Filereplacer();
-        Filereplacer(const std::string& filenmae, const std::string s1, const std::string s2);
-        std::ifstream& openfile();
-        std::ofstream& opennewfile();
-        void replaca(size_t position, std::string s1, std::string s2,std::string line);
-};
-#endif 
+#endif

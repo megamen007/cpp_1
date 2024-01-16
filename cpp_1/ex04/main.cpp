@@ -5,92 +5,63 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/16 01:14:43 by mboudrio          #+#    #+#             */
-/*   Updated: 2023/12/19 00:50:34 by mboudrio         ###   ########.fr       */
+/*   Created: 2024/01/16 05:21:57 by mboudrio          #+#    #+#             */
+/*   Updated: 2024/01/16 05:26:34 by mboudrio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
 
-Filereplacer::Filereplacer()
+void	filereplacer(std::string &filename, std::string &s1, std::string &s2)
 {
-    
-}
-
-Filereplacer::Filereplacer(const std::string& filenmae, const std::string s1, const std::string s2) : filename(filename) , s1(s1), s2(s2) 
-{
-    
-}
-
-std::ifstream& Filereplacer::openfile()
-{
-    std::ifstream inputfile(filename);
-    
-    if (!inputfile.is_open())
-    {
-        std::cerr << "unable to open file" << filename << std::endl;
+	std::ifstream input(filename.c_str());
+	if (!input.is_open())
+	{
+        std::cerr << "Error opening file: " << filename << std::endl;
         exit(2);
     }
-    return(inputfile);
-}
-
-std::ofstream& Filereplacer::opennewfile()
-{
-    std::ofstream outputfile(filename + ".replace");
-    
-    if (!outputfile.is_open())
-    {
-        std::cerr << "unable to open file" << filename << std::endl;
-        exit(2); 
+	std::ofstream output((filename + ".replace").c_str());
+	if (!output.is_open())
+	{
+        std::cerr << "Error can't create : " << filename + ".replace" << std::endl;
+		input.close();
+        exit(2);
     }
-    return(outputfile);
+	std::string line;
+	size_t		position = 0;
+	while (std::getline(input, line, '\0'))
+	{
+		while (1)
+		{
+			position = line.find(s1, position);
+			if (position != std::string::npos)
+			{
+				line.erase(position,s1.length());
+				line.insert(position, s2);
+				position += s2.length();
+			}
+			else
+				break;
+		}
+        output << line << std::endl;
+    }
 }
 
-void Filereplacer::replaca(size_t position, std::string s1, std::string s2,std::string  line)
+int main(int ac, char **av)
 {
-    while(std::getline(this->inputfile, line , '\0'))
-    {
-        while(1)
+	if(ac == 4)
+	{
+		std::string file = av[1];
+		std::string s1 = av[2];
+		std::string s2 = av[3];
+		if (s1.empty() || s2.empty())
         {
-            position = line.find(s1, position);
-            if (position != std::string::npos)
-            {
-                line.erase(position, s1.length());
-                line.insert(position, s2);
-                position += s2.length();
-            }
-            else
-                break;
-        }
-        this->outputfile << line << std::endl;
-    }
-    std::cout << "replacing process is complete" << std::endl;
-}
-
-int main(int ac , char **av)
-{
-    Filereplacer Draft;
-    
-    int position;
-    std::string line;
-    
-    position = 0;
-    if (ac != 4)
-    {
-        std::cerr << "Check again ur argument please" << std::endl;
-        exit(2);
-    }
-    
-    std::string filename = av[1];
-    std::string s1 = av[2];
-    std::string s2 = av[3];
-    // std::ifstream& inputfile = Draft.openfile();
-    // std::ofstream& outputfile = Draft.opennewfile();
-
-    Filereplacer(filename, s1, s2);
-    Draft.openfile();
-    Draft.opennewfile();
-    Draft.replaca(position, s1, s2, line);
-
-    return 0;  
+			std::cerr << "empty inputs" << std::endl;
+			exit(2);
+		}
+		filereplacer(file, s1, s2);
+	}
+	else
+		std::cout << "incorrect input number" << std::endl ;
+	return 0;
 }
